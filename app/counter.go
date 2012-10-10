@@ -9,8 +9,8 @@ import (
 )
 
 type Counter struct {
-	Path string
-	Count int
+	Path      string
+	Count     int
 	Timestamp time.Time
 }
 
