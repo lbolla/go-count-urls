@@ -1,3 +1,0 @@
-#!/bin/sh
-
-~/src/google_appengine/dev_appserver.py --clear_datastore `dirname $0`
