@@ -44,13 +44,8 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var count Counter
 	c := appengine.NewContext(r)
-	err := datastore.RunInTransaction(c, func(c appengine.Context) error {
-		var err1 error
-		count, err1 = inc(c, datastore.NewKey(c, key, "singleton", 0, nil), r.URL.Path)
-		return err1
-	}, nil)
+	count, err := inc(c, datastore.NewKey(c, key, "singleton", 0, nil), r.URL.Path)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
