@@ -1,4 +1,4 @@
 go-count-urls
 =============
 
-Simple URL counter
+Google App that counts hits to urls.
