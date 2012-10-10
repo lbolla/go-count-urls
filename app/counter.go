@@ -42,6 +42,9 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	if key == "" {
 		http.NotFound(w, r)
 		return
+	} else if key == "favicon.ico" {
+		w.WriteHeader(http.StatusNoContent)
+		return
 	}
 
 	c := appengine.NewContext(r)
